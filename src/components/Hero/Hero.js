@@ -1,8 +1,12 @@
 import React from 'react';
 
-import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
+import {
+  Section,
+  SectionText,
+  SectionTitle,
+} from '../../styles/GlobalComponents';
 import Button from '../../styles/GlobalComponents/Button';
-import { LeftSection } from './HeroStyles';
+import { LeftSection, Link } from './HeroStyles';
 
 const Hero = (props) => (
   <>
@@ -13,9 +17,12 @@ const Hero = (props) => (
           My Personal Portfolio
         </SectionTitle>
         <SectionText>
-        The purpose of JavaScript Mastery is to help aspiring and established developers to take their development skills to the next level and build awesome apps.
+          This is Ahmed Magid !, A Junior Full-Stack Web Developer From
+          Damietta, Egypt.
         </SectionText>
-        <Button onClick={props.handleClick}>Learn More</Button>
+        <Link href='/cv.pdf'>
+          <Button href='cv.pdf'>Download CV</Button>
+        </Link>
       </LeftSection>
     </Section>
   </>

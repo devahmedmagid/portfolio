@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr;
+  grid-template-rows: 2fr;
   grid-column-gap: 2rem;
   padding: 1rem;
   padding-top: 2rem;
@@ -18,18 +18,22 @@ export const Container = styled.div`
   }
 `;
 export const Div1 = styled.div`
-  grid-area: 1 / 1 / 2 / 2;
+  grid-column-start: 1;
+  grid-column-end: 4;
   display: flex;
   flex-direction: row;
   align-content: center;
+
   @media ${(props) => props.theme.breakpoints.sm} {
     grid-area: 1 / 1 / 2 / 3;
   }
 `;
 export const Div2 = styled.div`
-  grid-area: 1 / 2 / 2 / 4;
+  grid-column-start: 3;
+  grid-column-end: 4;
   display: flex;
   justify-content: space-around;
+  align-self: center;
   @media ${(props) => props.theme.breakpoints.sm} {
     grid-area: 2 / 2 / 3 / 5;
   }
@@ -51,6 +55,7 @@ export const NavLink = styled.a`
   line-height: 32px;
   color: rgba(255, 255, 255, 0.75);
   transition: 0.4s ease;
+  margin: 0 10px;
   &:hover {
     color: #fff;
     opacity: 1;
@@ -58,6 +63,7 @@ export const NavLink = styled.a`
   }
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0.5rem;
+    font-size: 16px;
   }
 `;
 
@@ -107,18 +113,34 @@ export const NavProductsIcon = styled(IoIosArrowDropdown)`
   }
 `;
 
-
-// Social Icons 
+// Social Icons
 
 export const SocialIcons = styled.a`
-transition: 0.3s ease;
-color: white;
-border-radius: 50px;
+  transition: 0.3s ease;
+  color: white;
+  border-radius: 50px;
   padding: 8px;
-&:hover {
-    background-color: #212d45;
+  &:hover {
     transform: scale(1.2);
     cursor: pointer;
-    
   }
-`
+`;
+
+export const Logo = styled.h2`
+  line-height: normal;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 5px;
+  background-color: white;
+  color: #003865;
+  padding: 4px 8px;
+  @media ${(props) => props.theme.breakpoints.sm} {
+    font-size: 16px;
+    padding: 2px 4px;
+  }
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    font-size: 16px;
+    padding: 2px 4px;
+  }
+`;
